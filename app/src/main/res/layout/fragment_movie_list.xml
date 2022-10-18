@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/toolbarMovieList"
+        android:padding="8dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/very_light_grey"
+            android:elevation="2dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/searchIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/searchEditText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_search_24"/>
+
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/searchIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/filterButton"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@color/very_light_grey"
+                    android:hint="@string/movieSerials"
+                    android:layout_marginEnd="2dp"
+                    />
+
+                <View
+                    android:id="@+id/separatorView"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_grey"
+                    app:layout_constraintBottom_toBottomOf="@id/filterButton"
+                    app:layout_constraintEnd_toStartOf="@id/filterButton"
+                    app:layout_constraintStart_toEndOf="@id/searchEditText"
+                    app:layout_constraintTop_toTopOf="@id/filterButton"
+                    android:layout_marginVertical="8dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/filterButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/very_light_grey"
+                    android:src="@drawable/ic_baseline_filter_list_24"
+                    app:layout_constraintStart_toEndOf="@id/searchEditText"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="8dp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.Toolbar>
+    <include
+        android:id="@+id/loadStateView"
+        layout="@layout/loading_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:visibility="gone"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movieListRv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:spanCount="3"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:padding="8dp"
+        tools:listitem="@layout/movie_list_item"
+        />
+
+</LinearLayout>

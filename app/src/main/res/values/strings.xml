@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Kinopoisk</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="formattedMovieLength">%1$d ч %2$d мин</string>
+    <string name="all_movie_detail"><![CDATA[Все детали о фильме >]]></string>
+    <string name="description">Описание</string>
+    <string name="MissingConnectionWithServer">Отсутствует соединение с сервером</string>
+    <string name="refresh">Обновить</string>
+    <string name="movieSerials">Фильмы, сериалы</string>
+    <string name="show">Показывать</string>
+    <string name="all">Все</string>
+    <string name="movie">Фильмы</string>
+    <string name="series">Сериалы</string>
+    <string name="reset">Сбросить</string>
+    <string name="choose">Выберите %1s</string>
+    <string name="genre">жанр</string>
+    <string name="genres">Жанры</string>
+    <string name="country">страну</string>
+    <string name="countries">Страны</string>
+</resources>
